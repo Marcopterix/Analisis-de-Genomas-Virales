@@ -101,7 +101,8 @@ done
 
 rm *_metaSPAdes_plus.fa
 rm *_SPAdes_plus_contigs.fa
-rm ./BLAST_assembly/*_plus_contigs* ./BLAST_assembly/*_minus_contigs.txt
+rm ./BLAST_assembly/*_plus_contigs* 
+rm ./BLAST_assembly/*_minus_contigs.txt
 rm ${dirout}/*_BLASTn_results.tsv #Eliminar los primeros resulstados de BLASTn
 #find /home/user/Analisis_corridas/SPAdes/virus/BLAST_assembly -type f -size 0 -exec rm -f {} \;
 
