@@ -32,8 +32,9 @@ for ensamble in *.fa; do
 
 blastn -query ${ensamble} -db $BnV_DB_PATH/${db} \
        -outfmt "6 qseqid salltitles sstrand pident qcovs bitscore evalue" \
-       -max_hsps 1 -culling_limit 1 \
-       -perc_identity 80 -evalue 1e-10 \
+       -max_target_seqs 1 -max_hsps 1 \
+	   -num_threads 5 \
+       -perc_identity 70 -evalue 1e-10 \
        -out ${dirout}/${ID}_results.tsv
 
 # --------------------------------
@@ -116,8 +117,9 @@ for ens in ${dirblas}/*fasta; do
 
 blastn -query ${ens} -db $BnV_DB_PATH/${db} \
        -outfmt "6 qseqid salltitles sstrand pident qcovs bitscore evalue" \
-       -max_hsps 1 -culling_limit 1 \
-       -perc_identity 80 -evalue 1e-10 \
+       -max_target_seqs 1 -max_hsps 1 \
+       -num_threads 5 \
+	   -perc_identity 80 -evalue 1e-10 \
        -out ${dirblas}/${ID}_results.tsv
 
 # --------------------------------
