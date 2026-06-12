@@ -34,7 +34,8 @@ echo -e "\n\033[1;36m========== Searching for gene HA ==========\033[0m\n"
 blastx -query ${ensamble} \
        -db $BxIA_DB_PATH/${db} \
        -outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend evalue bitscore qseq" \
-       -max_hsps 1 -culling_limit 1 \
+       -num_threads 5 \
+	   -max_target_seqs 1 -max_hsps 1 \
        -out ${dirout}/${ID}_results.tsv
 
 awk '{print ">"$1"_HA""\n"$11}' ${dirout}/${ID}_results.tsv > ${dirout}/${ID}_HA_prot.fna
