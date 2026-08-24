@@ -174,7 +174,7 @@ if [[ ${ID} == ${assembly_ID} ]]; then
 if [[ ${genero} != "Influenza_A_virus" ]]; then
 	echo -e "If control: ${genero}"
 
-seqtk seq -L 100 ${assembly} > ${ID}-metaSPAdes-assembly-plus.fa
+seqtk seq -L 500 ${assembly} > ${ID}-metaSPAdes-assembly-plus.fa
 
 	else
 
